@@ -9,6 +9,6 @@ stages:
 shakti-test:
   stage: test
   script:
-    - cd dashboard
+    - docker build . -t shakti:local
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
     - docker run -i registry.naspersclassifieds.com/panamera/shakti:latest dashing start
