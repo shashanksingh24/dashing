@@ -9,6 +9,5 @@ stages:
 shakti-test:
   stage: test
   script:
-    - docker run -i ruby gem install dashing
     - cd dashboard
-    - docker run -i ruby dashing start
+    - docker run -i registry.naspersclassifieds.com/panamera/shakti:latest dashing start
