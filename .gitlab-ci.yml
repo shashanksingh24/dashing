@@ -11,4 +11,4 @@ shakti-test:
   script:
     - docker run -i ruby gem install dashing
     - cd dashboard
-    - dashing start
+    - docker run -i ruby dashing start
