@@ -12,9 +12,8 @@ shakti-test:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
     - docker build . -t shakti:local
     - docker rm -f shakti || true
-    - docker run -p 3030:3030 --name "shakti" -d shakti:local dashing start
+    - docker run -p 3030:3030 --name "shakti" -it shakti:local dashing start
     - docker ps
-    - apt-get install curl -y || true
     - apk add --update curl -y || true
     - curl -I http://localhost:3030/sample
     - docker exec -i shakti curl -I http://localhost:3030/sample
