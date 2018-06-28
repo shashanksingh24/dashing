@@ -13,7 +13,7 @@ shakti-test:
     - docker build . -t shakti:local
     - docker run -p 3030:3030 -d shakti:local dashing start
     - docker ps
-    - #stats="$(curl -I http://localhost:3030/sample 2>/dev/null | head -n 1 | cut -d$' ' -f2)" || true
+#    - stats="$(curl -I http://localhost:3030/sample 2>/dev/null | head -n 1 | cut -d$' ' -f2)" || true
     - curl -I http://localhost:3030/sample
     - echo $stats
-    - if [ "$stats" != "200" ]; then exit 1; else; echo "Dashing is running" exit 0; fi;
+    - if [ "$stats" != "200" ]; then exit 1; else; echo "Dashing is running" exit 0; fi
