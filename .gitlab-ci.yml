@@ -14,7 +14,8 @@ shakti-test:
     - docker rm -f shakti || true
     - docker run -p 3030:3030 --name "shakti" -d shakti:local dashing start
     - docker ps
-    - apk add --update curl -y || true
+    - apk add --update curl -y
+    - sleep 15
     - curl -I http://localhost:3030/sample
     - docker exec -i shakti curl -I http://localhost:3030/sample
     - docker exec -i shakti curl -I http://localhost:3030/sample 2>/dev/null | head -n 1 | cut -d$' ' -f2
