@@ -12,7 +12,7 @@ shakti-test:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
     - docker build . -t shakti:local
     - docker rm -f shakti || true
-    - docker run -p 3030:3030 --name "shakti" -d shakti:local
+    - docker run -p 3030:3030 --name "shakti" -d shakti:local dashing start
     - docker exec -i shakti dashing start
     - docker exec -i shakti curl http://localhost:3030/sample
     - docker ps
