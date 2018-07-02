@@ -13,8 +13,8 @@ shakti-test:
     - docker build . -t shakti:local
     - docker rm -f shakti || true
     - docker run -p 3030:3030 --name "shakti" -d shakti:local
-    - docker exec -i shakti dashing start -d
-    - docker exec -i shakti curl http://localhost:3030/sample
+    - docker exec -i shakti dashing start -d && sleep 5 && curl http://localhost:3030/sample
+#    - docker exec -i shakti curl http://localhost:3030/sample
     - docker ps
     - apk add --update curl -y
     - docker exec -i shakti curl -I http://localhost:3030/sample 2>/dev/null | head -n 1 | cut -d$' ' -f2
