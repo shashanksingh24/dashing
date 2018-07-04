@@ -5,6 +5,8 @@ gem 'roo'
 gem 'google-drive'
 gem 'google-spreadsheet-ruby'
 gem 'roo-xls'
+gem 'google-api-client', '0.8.2', require: 'google/api_client'
+gem 'google_drive'
 
 ## Remove this if you don't need a twitter widget.
 gem 'twitter', '>= 5.9.0'
